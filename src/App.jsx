@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import { useEffect, useState } from "react";
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+import CountryList from "./components/CountryList";
 
 polyfillCountryFlagEmojis();
 
@@ -48,7 +49,10 @@ function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
-          <Route path="countries" element={<p>List of countries</p>} />
+          <Route
+            path="countries"
+            element={<CountryList cities={cities} isLoading={isLoading} />}
+          />
           <Route path="form" element={<p>Form</p>} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
