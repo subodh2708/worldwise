@@ -1,3 +1,4 @@
+import { useCities } from "../contexts/CiitesContext";
 import styles from "./CityItem.module.css";
 import { NavLink } from "react-router-dom";
 const formatDate = (date) =>
@@ -8,13 +9,16 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
+  const { currentCity } = useCities();
   const { cityName, emoji, date, id, position } = city;
   console.log(position);
   return (
     <li>
       <NavLink
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
-        className={styles.cityItem}
+        className={`${styles.cityItem} ${
+          currentCity.id === id ? styles["cityItem--active"] : ""
+        }`}
       >
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>
