@@ -13,13 +13,12 @@ import { useCities } from "../contexts/CiitesContext";
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 
 polyfillCountryFlagEmojis();
 
 function Map() {
-  const [searchParams] = useSearchParams();
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+  const [mapLat, mapLng] = useUrlPosition();
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {
