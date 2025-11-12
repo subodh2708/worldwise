@@ -37,52 +37,16 @@
       "id": 98443197
     },
     {
-      "cityName": "Carpio de Azaba",
+      "cityName": "La Almolda",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2025-11-12T11:36:24.415Z",
+      "date": "2025-11-12T13:05:29.624Z",
       "notes": "",
       "position": {
-        "lat": "40.581846783237864",
-        "lng": "-6.699618750684071"
+        "lat": "41.522625936594814",
+        "lng": "-0.22163119839981651"
       },
       "id": 98443198
-    },
-    {
-      "cityName": "San Miguel de Cinca",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-11-12T11:38:55.065Z",
-      "notes": "",
-      "position": {
-        "lat": "41.81823542988368",
-        "lng": "0.06591796875000001"
-      },
-      "id": 98443199
-    },
-    {
-      "cityName": "Cervera de Pisuerga",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-11-12T11:41:31.902Z",
-      "notes": "",
-      "position": {
-        "lat": "42.889466398454424",
-        "lng": "-4.570312500000001"
-      },
-      "id": 98443200
-    },
-    {
-      "cityName": "Cussy-en-Morvan",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2025-11-12T11:41:39.667Z",
-      "notes": "",
-      "position": {
-        "lat": "47.09709556895992",
-        "lng": "4.174804687500001"
-      },
-      "id": 98443201
     }
   ]
 }
