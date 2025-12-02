@@ -4,6 +4,7 @@ import {
   useEffect,
   useContext,
   useReducer,
+  useCallback,
 } from "react";
 
 const CitiesContext = createContext();
@@ -100,21 +101,24 @@ function CitiesProvider({ children }) {
     }
   }
 
-  async function getCity(id) {
-    if (Number(id) === currentCity.id) return;
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (Number(id) === currentCity.id) return;
 
-    dispatch({ type: "loading" });
-    try {
-      const res = await fetch(`${BASE_URL}cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch {
-      dispatch({
-        type: "rejected",
-        payload: "There is an error in loading the city data",
-      });
-    }
-  }
+      dispatch({ type: "loading" });
+      try {
+        const res = await fetch(`${BASE_URL}cities/${id}`);
+        const data = await res.json();
+        dispatch({ type: "city/loaded", payload: data });
+      } catch {
+        dispatch({
+          type: "rejected",
+          payload: "There is an error in loading the city data",
+        });
+      }
+    },
+    [currentCity.id]
+  );
 
   async function deleteCity(id) {
     dispatch({ type: "loading" });
