@@ -8,7 +8,8 @@ import {
 } from "react";
 
 const CitiesContext = createContext();
-const BASE_URL = "http://localhost:8000/";
+
+const BASE_URL = "https://my-json-server.typicode.com/subodh2708/worldwise";
 
 const initialState = {
   cities: [],
@@ -84,7 +85,7 @@ function CitiesProvider({ children }) {
   async function createCity(newCity) {
     dispatch({ type: "loading" });
     try {
-      const res = await fetch(`${BASE_URL}cities`, {
+      const res = await fetch(`${BASE_URL}/cities`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: {
@@ -107,7 +108,7 @@ function CitiesProvider({ children }) {
 
       dispatch({ type: "loading" });
       try {
-        const res = await fetch(`${BASE_URL}cities/${id}`);
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
         const data = await res.json();
         dispatch({ type: "city/loaded", payload: data });
       } catch {
@@ -123,7 +124,7 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loading" });
     try {
-      await fetch(`${BASE_URL}cities/${id}`, {
+      await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
 
