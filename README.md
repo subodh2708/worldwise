@@ -5,6 +5,12 @@ The project focuses on modern React architecture, routing, and global state mana
 
 ---
 
+## 🚀 Live Demo
+
+🔗 https://worldwise-subodh.netlify.app
+
+---
+
 ## 🚀 Key Features
 
 - Track visited cities and countries
